@@ -23,30 +23,40 @@ pipeline {
             steps {
                 echo 'Registering the metadata'
                 echo 'Another echo to make the pipeline a bit more complex'
+    
+                // registerBuildArtifactMetadata(
+                //     name: "test-deployment",
+                //     version: "1.0.1",
+                //     type: "docker",
+                //     url: "http://localhost:4001",
+                //     digest: "6f637064707039346163663237383761",
+                //     // label: "Internal-demo-BT-artifact-Prod"
+                // )
+                
                 registerBuildArtifactMetadata(
-                    name: "artifact-hello",
-                    version: "1.0.1",
+                    name: "test-deployment",
+                    version: "1.0.0",
                     type: "docker",
-                    url: "http://localhost:1111",
-                    digest: "6f637064707039346163663237383938",
-                    label: "preprod,test"
+                    url: "http://aws.artifacts/6a9acc6aa1be5446a2393ab90e7ca9e218bc07fa",
+                    digest: "6a9acc6aa1be5446a2393ab90e7ca9e218bc07fa",
+                    label: "Internal-demo-BT-artifact-Prod"
                 )
-                registerBuildArtifactMetadata(
-                    name: "artifact-world",
-                    version: "1.0.1",
-                    type: "docker",
-                    url: "http://localhost:222",
-                    digest: "7f637064707039346163663237383938",
-                    label: "nort,south"
-                )
-                registerBuildArtifactMetadata(
-                    name: "artifact-helloworld",
-                    version: "1.0.1",
-                    type: "docker",
-                    url: "http://localhost:333",
-                    digest: "8f6370647070393463663237383938",
-                    label: "ease,west"
-                )
+                // registerBuildArtifactMetadata(
+                //     name: "prod-demo-runs-BT-branch-2",
+                //     version: "1.0.1",
+                //     type: "docker",
+                //     url: "http://localhost:4001",
+                //     digest: "6f637064707039346163663237383761",
+                //     label: "Internal-demo-BT-artifact-Prod"
+                // )
+                // registerBuildArtifactMetadata(
+                //     name: "test-deployment",
+                //     version: "1.0.0",
+                //     type: "docker",
+                //     url: "http://aws.artifacts/6a9acc6aa1be5446a2393ab90e7ca9e218bc07fa",
+                //     digest: "6a9acc6aa1be5446a2393ab90e7ca9e218bc07fa",
+                //     label: "preprod,test"
+                // )
             }
         }
 
